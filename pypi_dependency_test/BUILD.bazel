@@ -1,0 +1,9 @@
+load("@pypi//:requirements.bzl", "requirement")
+load("@rules_python//python:defs.bzl", "py_test")
+
+py_test(
+    name = "pypi_dependency_test",
+    timeout = "short",
+    srcs = ["pypi_dependency_test.py"],
+    deps = [requirement("orbax-checkpoint")],
+)
