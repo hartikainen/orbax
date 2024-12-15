@@ -244,7 +244,7 @@
     "@@rules_python+//python/extensions:pip.bzl%pip": {
       "general": {
         "bzlTransitiveDigest": "p8dMUBpYp2rri2WBwpm++HRwv/muAMdipNHgNyKJlm4=",
-        "usagesDigest": "1Q5bzwid6tclSWFfxHiRALMa3OX5W1HFM67d6zAWA40=",
+        "usagesDigest": "s9m23al2MF07nnDiNlsfaw0OwJ5xECRwogG2BU+az2E=",
         "recordedFileInputs": {
           "@@//requirements.macos_arm64.txt": "de01fb8ed6974144c7cf376b80ac1364f7abea3b3edcb5d5147a4c907da144f2",
           "@@protobuf+//python/requirements.txt": "983be60d3cec4b319dcab6d48aeb3f5b2f7c3350f26b3a9e97486c37967c73c5",
@@ -463,7 +463,12 @@
               "dep_template": "@pypi//{name}:{target}",
               "python_interpreter_target": "@@rules_python++python+python_3_12_host//:python",
               "repo": "pypi_312",
-              "requirement": "orbax-checkpoint==0.10.2     --hash=sha256:dcfc425674bd8d4934986143bd22a37cd634d034652c5d30d83c539ef8587941     --hash=sha256:e575ebe1f94e5cb6353ab8c9df81de0ca7cddc118645c3bfc17b8344f19d42f1"
+              "requirement": "orbax-checkpoint==0.10.2     --hash=sha256:dcfc425674bd8d4934986143bd22a37cd634d034652c5d30d83c539ef8587941     --hash=sha256:e575ebe1f94e5cb6353ab8c9df81de0ca7cddc118645c3bfc17b8344f19d42f1",
+              "whl_patches": {
+                "@@//:orbax-remove-path-BUILD.patch": "{\"patch_strip\":0,\"whls\":[\"orbax_checkpoint-0.10.2-py3-none-any.whl\"]}",
+                "@@//:orbax-remove-path-snapshot-BUILD.patch": "{\"patch_strip\":0,\"whls\":[\"orbax_checkpoint-0.10.2-py3-none-any.whl\"]}",
+                "@@//:orbax-update-RECORD.patch": "{\"patch_strip\":0,\"whls\":[\"orbax_checkpoint-0.10.2-py3-none-any.whl\"]}"
+              }
             }
           },
           "pypi_312_protobuf": {

@@ -21,5 +21,14 @@ pip.parse(
         "requirements.macos_arm64.txt": "osx_*",
     },
 )
+pip.override(
+    file = "orbax_checkpoint-0.10.2-py3-none-any.whl",
+    patch_strip = 0,
+    patches = [
+        "//:orbax-remove-path-BUILD.patch",
+        "//:orbax-remove-path-snapshot-BUILD.patch",
+        "//:orbax-update-RECORD.patch",
+    ],
+)
 
 use_repo(pip, "pypi")
